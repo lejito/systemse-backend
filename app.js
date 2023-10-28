@@ -1,5 +1,5 @@
 "use strict";
-const routes = require('./src/routes');
+const routes = require('./src/routes/index');
 const express = require('express');
 const app = express();
 
@@ -15,10 +15,6 @@ app.use((req, res, next) => {
   res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
-
-// Importar rutas
-const router = require("./src/routes/index.js");
-app.use(router);
 
 // Configurar rutas
 app.use("/api", routes);
